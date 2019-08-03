@@ -28,46 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Allocate = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.listViewIntervals = new System.Windows.Forms.ListView();
+            this.columnHeaderStart = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderEnd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btn_Add = new System.Windows.Forms.Button();
+            this.btn_Remove = new System.Windows.Forms.Button();
+            this.numericUpDownStart = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownEnd = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEnd)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btn_Allocate
             // 
-            this.button1.Location = new System.Drawing.Point(182, 103);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Allocate";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.btn_Allocate.Location = new System.Drawing.Point(164, 245);
+            this.btn_Allocate.Name = "btn_Allocate";
+            this.btn_Allocate.Size = new System.Drawing.Size(75, 23);
+            this.btn_Allocate.TabIndex = 0;
+            this.btn_Allocate.Text = "Allocate";
+            this.btn_Allocate.UseVisualStyleBackColor = true;
+            this.btn_Allocate.Click += new System.EventHandler(this.Button1_Click);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(83, 142);
+            this.textBox2.Location = new System.Drawing.Point(83, 274);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(174, 157);
+            this.textBox2.Size = new System.Drawing.Size(156, 70);
             this.textBox2.TabIndex = 2;
             // 
-            // textBox1
+            // listViewIntervals
             // 
-            this.textBox1.Location = new System.Drawing.Point(83, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 20);
-            this.textBox1.TabIndex = 3;
+            this.listViewIntervals.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderStart,
+            this.columnHeaderEnd});
+            this.listViewIntervals.FullRowSelect = true;
+            this.listViewIntervals.GridLines = true;
+            this.listViewIntervals.Location = new System.Drawing.Point(83, 91);
+            this.listViewIntervals.MultiSelect = false;
+            this.listViewIntervals.Name = "listViewIntervals";
+            this.listViewIntervals.Size = new System.Drawing.Size(156, 148);
+            this.listViewIntervals.TabIndex = 3;
+            this.listViewIntervals.UseCompatibleStateImageBehavior = false;
+            this.listViewIntervals.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeaderStart
+            // 
+            this.columnHeaderStart.Tag = "";
+            this.columnHeaderStart.Text = "Start";
+            this.columnHeaderStart.Width = 74;
+            // 
+            // columnHeaderEnd
+            // 
+            this.columnHeaderEnd.Tag = "";
+            this.columnHeaderEnd.Text = "End";
+            this.columnHeaderEnd.Width = 74;
+            // 
+            // btn_Add
+            // 
+            this.btn_Add.Location = new System.Drawing.Point(83, 34);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(75, 23);
+            this.btn_Add.TabIndex = 4;
+            this.btn_Add.Text = "Add";
+            this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
+            // 
+            // btn_Remove
+            // 
+            this.btn_Remove.Location = new System.Drawing.Point(164, 34);
+            this.btn_Remove.Name = "btn_Remove";
+            this.btn_Remove.Size = new System.Drawing.Size(75, 23);
+            this.btn_Remove.TabIndex = 5;
+            this.btn_Remove.Text = "Remove";
+            this.btn_Remove.UseVisualStyleBackColor = true;
+            this.btn_Remove.Click += new System.EventHandler(this.Btn_Remove_Click);
+            // 
+            // numericUpDownStart
+            // 
+            this.numericUpDownStart.Location = new System.Drawing.Point(84, 64);
+            this.numericUpDownStart.Name = "numericUpDownStart";
+            this.numericUpDownStart.Size = new System.Drawing.Size(74, 20);
+            this.numericUpDownStart.TabIndex = 6;
+            // 
+            // numericUpDownEnd
+            // 
+            this.numericUpDownEnd.Location = new System.Drawing.Point(164, 64);
+            this.numericUpDownEnd.Name = "numericUpDownEnd";
+            this.numericUpDownEnd.Size = new System.Drawing.Size(75, 20);
+            this.numericUpDownEnd.TabIndex = 7;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 435);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(348, 435);
+            this.Controls.Add(this.numericUpDownEnd);
+            this.Controls.Add(this.numericUpDownStart);
+            this.Controls.Add(this.btn_Remove);
+            this.Controls.Add(this.btn_Add);
+            this.Controls.Add(this.listViewIntervals);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Allocate);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Meeting Rooms II";
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEnd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -75,9 +143,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Allocate;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ListView listViewIntervals;
+        private System.Windows.Forms.ColumnHeader columnHeaderStart;
+        private System.Windows.Forms.ColumnHeader columnHeaderEnd;
+        private System.Windows.Forms.Button btn_Add;
+        private System.Windows.Forms.Button btn_Remove;
+        private System.Windows.Forms.NumericUpDown numericUpDownStart;
+        private System.Windows.Forms.NumericUpDown numericUpDownEnd;
     }
 }
 

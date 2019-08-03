@@ -6,6 +6,28 @@ namespace UnitTestProject1
     [TestClass]
     public class UnitTest1
     {
+
+        [TestMethod]
+        public void TestMethodX()
+        {
+            int[][] intervals = new int[][]{
+                                    new int[] { 2,5},
+                                    new int[] { 8,10},
+                                    new int[] { 8,10},
+                                    new int[] { 7,8},
+                                    new int[] { 5, 7 },
+                                    new int[] { 1, 2 },
+                                    new int[] { 1, 5 },
+                                    new int[] { 3, 8 },
+                                    new int[] { 7,8  },
+                                    new int[] { 5, 7 },
+                                    new int[] { 1, 3 }
+                                };
+            int rooms = new RoomAllocator().MinMeetingRooms(intervals);
+
+            Assert.AreEqual(3, rooms, "Incorrect number of rooms");
+        }
+
         [TestMethod]
         public void TestMethod1()
         {
@@ -16,10 +38,10 @@ namespace UnitTestProject1
                                     new int[] { 4466,4781},
                                     new int[] { 518, 2918 },
                                     new int[] { 300, 5870 }
-                                };            
+                                };
             int rooms = new RoomAllocator().MinMeetingRooms(intervals);
 
-            Assert.AreEqual(4, rooms, 0, "Incorrect number of rooms");
+            Assert.AreEqual(4, rooms, "Incorrect number of rooms");
         }
 
         [TestMethod]
@@ -31,7 +53,7 @@ namespace UnitTestProject1
             };
             int rooms = new RoomAllocator().MinMeetingRooms(intervals);
 
-            Assert.AreEqual(77, rooms, 0, "Incorrect number of rooms");
+            Assert.AreEqual(77, rooms, "Incorrect number of rooms");
         }
 
         [TestMethod]
@@ -45,7 +67,7 @@ namespace UnitTestProject1
 
             int rooms = new RoomAllocator().MinMeetingRooms(intervals);
 
-            Assert.AreEqual(1, rooms, 0, "Incorrect number of rooms");
+            Assert.AreEqual(1, rooms, "Incorrect number of rooms");
         }
 
         [TestMethod]
@@ -59,7 +81,7 @@ namespace UnitTestProject1
 
             int rooms = new RoomAllocator().MinMeetingRooms(intervals);
 
-            Assert.AreEqual(2, rooms, 0, "Incorrect number of rooms");
+            Assert.AreEqual(2, rooms, "Incorrect number of rooms");
         }
 
         [TestMethod]
@@ -72,7 +94,7 @@ namespace UnitTestProject1
                                 };
             int rooms = new RoomAllocator().MinMeetingRooms(intervals);
 
-            Assert.AreEqual(2, rooms, 0, "Incorrect number of rooms");
+            Assert.AreEqual(2, rooms, "Incorrect number of rooms");
         }
 
         [TestMethod]
@@ -87,7 +109,7 @@ namespace UnitTestProject1
                                 };
             int rooms = new RoomAllocator().MinMeetingRooms(intervals);
 
-            Assert.AreEqual(2, rooms, 0, "Incorrect number of rooms");
+            Assert.AreEqual(2, rooms, "Incorrect number of rooms");
         }
 
         [TestMethod]
@@ -102,7 +124,7 @@ namespace UnitTestProject1
                                 };
             int rooms = new RoomAllocator().MinMeetingRooms(intervals);
 
-            Assert.AreEqual(2, rooms, 0, "Incorrect number of rooms");
+            Assert.AreEqual(2, rooms, "Incorrect number of rooms");
         }
     }
 }
