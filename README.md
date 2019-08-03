@@ -1,5 +1,6 @@
 ## Meeting Rooms II
 ### C# Solution with Unit Tests
+#### By @alfredomarqueza
 
 ### Instructions
 
