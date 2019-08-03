@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Meeting Rooms Solution
+// Room Allocator
+// By @alfredomarqueza  2019
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

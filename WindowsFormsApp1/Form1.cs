@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Meeting Rooms Solution
+// By @alfredomarqueza  2019
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
