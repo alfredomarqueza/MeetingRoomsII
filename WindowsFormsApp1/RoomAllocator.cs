@@ -8,62 +8,28 @@ namespace WindowsFormsApp1
 {
     public class RoomAllocator
     {
-        public class Room
-        {
-            public List<int[]> Intervals { set; get; }
-        }
 
         public int MinMeetingRooms(int[][] intervals)
         {
-            List<Room> neededRooms = new List<Room>();
 
-            intervals = intervals.OrderBy(x => x[0]).ToArray();
+            int[] startTimes = intervals.Select(x => x[0]).OrderBy(x => x).ToArray();
+            int[] endTimes = intervals.Select(x => x[1]).OrderBy(x=> x).ToArray();
 
-            foreach (int[] intervalToFit in intervals)
+            int minimunRooms = 0;
+            int endTimeIndex = 0;
+
+            for (int i = 0; i < startTimes.Length; i++)
             {
-                bool allocated = false;
-                foreach (Room room in neededRooms)
+                minimunRooms++;
+
+                if (startTimes[i] >= endTimes[endTimeIndex])
                 {
-                    bool fitsInRoom = true;
-                    foreach (int[] roomInterval in room.Intervals)
-                    {
-                        if (roomInterval[0] < intervalToFit[0] && roomInterval[1] > intervalToFit[0])
-                        {
-                            fitsInRoom = false;
-                            break;
-                        }
-
-                        if (roomInterval[0] < intervalToFit[1] && roomInterval[1] > intervalToFit[1])
-                        {
-                            fitsInRoom = false;
-                            break;
-                        }
-
-                        if (roomInterval[0] >= intervalToFit[0] && roomInterval[1] <= intervalToFit[1])
-                        {
-                            fitsInRoom = false;
-                            break;
-                        }
-                    }
-
-                    if (fitsInRoom)
-                    {
-                        allocated = true;
-                        room.Intervals.Add(intervalToFit);
-                        break;
-                    }
-                }
-
-                if (!allocated)
-                {
-                    Room newRoom = new Room();
-                    newRoom.Intervals = new List<int[]>();
-                    newRoom.Intervals.Add(intervalToFit);
-                    neededRooms.Add(newRoom);
+                    minimunRooms--;
+                    endTimeIndex++;
                 }
             }
 
-            return neededRooms.Count;
+            return minimunRooms;
         }
     }
 }
